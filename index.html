@@ -2,468 +2,370 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IEE Simón Rodríguez | Cartanal - Oficial</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>IEE Simón Rodríguez - Extensión Cartanal</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* FRAMEWORK INTERNO DE ESTILOS PERSONALIZADOS */
         :root {
-            --p-blue: #3498db;
-            --p-blue-dark: #2980b9;
-            --p-green: #2ecc71;
-            --p-green-dark: #27ae60;
-            --p-red: #e74c3c;
-            --p-yellow: #f1c40f;
-            --p-white: #ffffff;
-            --p-dark: #2c3e50;
-            --pastel-blue: #ebf5fb;
-            --pastel-red: #fdedec;
-            --pastel-green: #e9f7ef;
-            --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-            --shadow-hard: 0 15px 45px rgba(0,0,0,0.15);
-            --transition-main: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --primary-red: #e63946;
+            --primary-blue: #0077b6;
+            --soft-blue: #f0f8ff;
+            --text-dark: #2b2d42;
+            --accent-green: #2a9d8f;
+            --card-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            --border-radius-xl: 30px;
         }
 
-        /* RESET DE SISTEMA */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* ESTILOS BASE DE INGENIERÍA */
         body {
-            font-family: 'Quicksand', sans-serif;
-            background-color: #f4f7f6;
-            color: var(--p-dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: var(--text-dark);
             overflow-x: hidden;
             scroll-behavior: smooth;
-            line-height: 1.8;
         }
 
-        h1, h2, h3, .font-title { font-family: 'Montserrat', sans-serif; font-weight: 900; }
-
-        /* NAVEGACIÓN PROFESIONAL */
-        .navbar-main {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(12px);
-            border-bottom: 5px solid var(--p-blue);
-            padding: 18px 0;
-            z-index: 2000;
-            transition: var(--transition-main);
-        }
-
-        .navbar-main.scrolled { padding: 10px 0; box-shadow: var(--shadow-hard); }
-
-        .navbar-brand img {
-            width: 70px;
-            transition: var(--transition-main);
-            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
-        }
-
-        .nav-link {
-            font-weight: 700;
-            color: var(--p-dark) !important;
-            margin: 0 12px;
-            padding: 10px 20px !important;
-            border-radius: 15px;
-            transition: var(--transition-main);
-        }
-
-        .nav-link:hover {
-            background: var(--pastel-blue);
-            color: var(--p-blue) !important;
-            transform: scale(1.05);
-        }
-
-        /* CONTENEDOR HERO ADAPTATIVO */
-        .hero-engine {
-            padding: 140px 0 80px;
-            background: linear-gradient(135deg, #fff 0%, var(--pastel-blue) 100%);
-            position: relative;
-        }
-        .hero-blob {
-            position: absolute;
-            top: -10%; right: -5%;
-            width: 500px; height: 500px;
-            background: var(--p-blue);
-            filter: blur(120px);
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        /* CARDS DE MISION Y VISION */
-        .card-system {
-            background: var(--p-white);
-            border: none;
-            border-radius: 40px;
-            padding: 50px 30px;
+        /* HEADER Y NAVBAR SEGÚN CAPTURA */
+        .top-banner {
+            background-color: #f8f9fa;
             text-align: center;
-            height: 100%;
-            transition: var(--transition-main);
-            box-shadow: var(--shadow-soft);
+            padding: 10px 0;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .top-banner span { color: var(--primary-red); }
+
+        .navbar-custom {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+
+        .nav-menu-btn {
+            background: none;
+            border: 1px solid #ccc;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        /* SECCIÓN HERO (APRENDER JUGANDO) */
+        .hero-section {
             position: relative;
-            overflow: hidden;
+            height: 90vh;
+            background: url('WhatsApp Image 2026-04-04 at 20.55.27sa.jpeg') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 100px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .card-system::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 8px;
-            background: var(--p-blue);
-        }
-
-        .card-system:hover {
-            transform: translateY(-20px);
-            box-shadow: var(--shadow-hard);
-        }
-
-        .card-icon {
-            font-size: 4.5rem;
-            margin-bottom: 25px;
-            display: inline-block;
-            background: var(--pastel-blue);
-            width: 120px; height: 120px;
-            line-height: 120px;
-            border-radius: 50%;
-        }
-
-        /* ESTILOS DE VIDEO ENGINE */
-        .video-box-master {
-            background: var(--p-white);
-            border-radius: 45px;
-            padding: 30px;
-            box-shadow: var(--shadow-soft);
-            margin-bottom: 30px;
-            border: 1px solid #eee;
-            transition: var(--transition-main);
-        }
-
-        .video-box-master:hover { border-color: var(--p-blue); }
-
-        .video-wrapper-inner {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 30px;
-            background: #000;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .video-wrapper-inner iframe {
+        .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            border: none;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
         }
 
-        .video-desc { padding: 25px 10px 10px; }
-        .video-desc h4 { color: var(--p-blue); font-weight: 800; }
-        .video-desc p { font-size: 1.1rem; color: #666; }
-
-        /* GALERIA TÉCNICA */
-        .gallery-item {
+        .hero-content {
             position: relative;
-            border-radius: 35px;
-            overflow: hidden;
-            margin-bottom: 30px;
-            height: 300px;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .gallery-item img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: var(--transition-main);
-        }
-
-        .gallery-item:hover img { transform: scale(1.1) rotate(2deg); }
-        /* SECCIÓN MAPA DE CARTANAL */
-        .map-container-engineering {
-            border-radius: 50px;
-            overflow: hidden;
-            border: 12px solid var(--p-white);
-            box-shadow: var(--shadow-hard);
-            height: 550px;
-            position: relative;
-        }
-
-        /* FOOTER DE INGENIERÍA */
-        .footer-engineering {
-            background: var(--p-dark);
-            color: var(--p-white);
-            padding: 120px 0 60px;
-            clip-path: ellipse(160% 100% at 50% 100%);
-            margin-top: -60px;
-        }
-
-        .footer-link {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: var(--transition-main);
-            display: block;
-            margin-bottom: 12px;
-        }
-
-        .footer-link:hover { color: var(--p-blue); padding-left: 10px; }
-
-        .social-btn {
-            width: 50px; height: 50px;
-            line-height: 50px;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            display: inline-block;
-            border-radius: 15px;
-            margin-right: 10px;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            transition: var(--transition-main);
         }
 
-        .social-btn:hover { background: var(--p-blue); transform: translateY(-5px); }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 800; }
 
-        /* UTILIDADES DINÁMICAS */
-        .bg-gradient-blue { background: linear-gradient(45deg, var(--p-blue), var(--p-blue-dark)); color: white; }
-        .text-justify { text-align: justify; }
-        .rounded-super { border-radius: 50px !important; }
-
-        @media (max-width: 768px) {
-            .hero-engine { padding: 100px 0 40px; }
-            .map-container-engineering { height: 350px; }
-            h1 { font-size: 2.2rem; }
+        /* ÁREAS DE ATENCIÓN (ACORDEONES) */
+        .area-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
-    </style>
+
+        .area-header {
+            background: #fff;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .area-header.active { background: #d0e7ff; }
+
+        .area-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            background: white;
+        }
+
+        .area-content.show { padding: 25px; max-height: 500px; }
+
+        /* GALERÍA DE ALEGRÍA */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 0;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .gallery-card:hover { transform: translateY(-10px); }
+
+        .gallery-card img, .gallery-card video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-card .info { padding: 15px; font-size: 0.9rem; }
+        </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-main fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="Logo colegio especial.jpeg" alt="Logo Institucional">
-                <div class="ms-3 d-none d-md-block">
-                    <span class="d-block h5 mb-0 fw-900">IEE SIMÓN RODRÍGUEZ</span>
-                    <small class="text-primary fw-bold">EXTENSIÓN CARTANAL</small>
-                </div>
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navFelipe">
-                <i class="fas fa-bars fa-2x"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navFelipe">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">INICIO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#nosotros">NOSOTROS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#multimedia">MULTIMEDIA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria">GALERÍA</a></li>
-                    <li class="nav-item"><a class="nav-link bg-gradient-blue ms-lg-3 px-4 shadow" href="#contacto">UBICACIÓN</a></li>
-                </ul>
+    <div class="top-banner">
+        ❤️ IEE SIMÓN RODRÍGUEZ - SER DIFERENTE ES ALGO COMÚN
+        <br>
+        <small class="text-muted">Contamos con personal capacitado para el abordaje integral de:</small>
+    </div>
+
+    <nav class="navbar-custom sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo-area d-flex align-items-center">
+                <img src="Logo colegio especial.jpeg" alt="Logo" width="50" class="me-2">
+                <span class="fw-bold">rodriquez.github.io</span>
             </div>
+            <button class="nav-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
-    <main id="inicio" class="hero-engine">
-        <div class="hero-blob"></div>
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="animate__animated animate__fadeInUp">Aprender Jugando</h1>
+            <p class="fs-4 animate__animated animate__fadeInUp animate__delay-1s">
+                En Cartanal, cada sonrisa es un paso hacia la independencia y el éxito personal de nuestros estudiantes.
+            </p>
+            <a href="#conocenos" class="btn btn-outline-light rounded-pill px-4 mt-3">Conócenos</a>
+        </div>
+    </section>
+
+    <section id="conocenos" class="py-5 bg-white">
+        <div class="container text-center py-5">
+            <h2 class="display-5 fw-bold mb-3">Nuestro Propósito de Vida 💗</h2>
+            <p class="text-muted fs-5 mb-5">Transformando la educación especial en el Sector Cartanal.</p>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-4">
+                        <h3 class="fw-bold"><span class="me-2">🟡</span>Misión</h3>
+                        <p class="text-secondary fs-5 text-justify">
+                            Fomentar la autonomía del estudiante como eje central de su desarrollo integral y social, adaptando cada estrategia a su ritmo individual.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-4">
+                        <h3 class="fw-bold"><span class="me-2">🌈</span>Visión</h3>
+                        <p class="text-secondary fs-5 text-justify">
+                            Ser una institución innovadora que garantice una educación de calidad, maximizando el trabajo de los docentes para potenciar las capacidades de cada estudiante.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 animate__animated animate__fadeInLeft">
-                    <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">BIENVENIDOS A LA EXCELENCIA</span>
-                    <h1 class="display-3 mb-4">Un Futuro Sin <span class="text-primary">Límites</span> Para Todos</h1>
-                    <p class="fs-5 text-muted mb-5 text-justify">
-                        En la Institución de Educación Especial Simón Rodríguez, sede Cartanal, creemos firmemente en el potencial único de cada niño. Nuestro compromiso es transformar la educación en una herramienta de libertad e independencia para la comunidad del Municipio Independencia.
-                    </p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#multimedia" class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow-lg">Ver Videos</a>
-                        <a href="#nosotros" class="btn btn-outline-dark btn-lg rounded-pill px-5 py-3">Nuestra Misión</a>
+            <h2 class="text-center mb-5 fw-bold">Áreas de Atención Especializada 🧩</h2>
+            
+            <div class="max-width-800 mx-auto">
+                <div class="area-card shadow-sm">
+                    <div class="area-header" onclick="toggleAccordion(this)">
+                        <span>💡 Discapacidad Intelectual (Retardo Mental)</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="area-content">
+                        <p class="mb-0">Nos enfocamos en el desarrollo de habilidades adaptativas, cognitivas y sociales, adaptando el ritmo de enseñanza a las necesidades individuales para lograr una integración efectiva en su entorno.</p>
                     </div>
                 </div>
-                <div class="col-lg-6 animate__animated animate__zoomIn">
-                    <div class="position-relative">
-                        <img src="6.jpeg" class="img-fluid rounded-super shadow-hard border border-white border-5" alt="Estudiantes Cartanal">
-                        <div class="position-absolute bottom-0 end-0 p-4">
-                            <div class="bg-white p-3 rounded-4 shadow-lg animate__animated animate__bounceInDelay">
-                                <i class="fas fa-heart text-danger fa-2x"></i>
-                                <span class="fw-bold ms-2">+100 Niños Atendidos</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
 
-    <section id="nosotros" class="py-5">
+                <div class="area-card shadow-sm">
+                    <div class="area-header" onclick="toggleAccordion(this)">
+                        <span>🎨 Síndrome de Down</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="area-content">
+                        <p class="mb-0">Atención integral centrada en la estimulación temprana y el fortalecimiento de capacidades comunicativas y sociales.</p>
+                    </div>
+                </div>
+                <section id="galeria" class="py-5 bg-white">
         <div class="container py-5">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-4 fw-900">Nuestro Compromiso Social</h2>
-                <div class="mx-auto mt-3" style="width: 100px; height: 6px; background: var(--p-blue); border-radius: 10px;"></div>
+                <h2 class="display-5 fw-bold">Nuestra Galería de Alegría 📸🎥</h2>
+                <p class="text-muted">Un vistazo vibrante a las actividades, momentos y rostros en nuestra sede de Cartanal.</p>
             </div>
-            <div class="row g-4 mt-4">
-                <div class="col-md-6" data-aos="fade-right">
-                    <div class="card-system">
-                        <div class="card-icon text-primary">
-                            <i class="fas fa-hands-holding-child"></i>
-                        </div>
-                        <h3>Nuestra Misión</h3>
-                        <p class="text-muted fs-5">Brindar una atención pedagógica integral de calidad a los niños, niñas y jóvenes con necesidades educativas especiales, promoviendo su inserción social y autonomía personal dentro de su entorno comunitario en Cartanal.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-card" data-aos="zoom-in">
+                    <img src="2.jpeg" alt="Actividad 1">
+                    <div class="info">
+                        <span class="badge bg-primary mb-2">7mo Aniversario</span>
+                        <p class="mb-0">Celebración del aniversario IEE</p>
                     </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-left">
-                    <div class="card-system">
-                        <div class="card-icon text-success">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3>Nuestra Visión</h3>
-                        <p class="text-muted fs-5">Ser reconocidos como el centro de referencia en educación especial líder en el Estado Miranda, destacando por la innovación pedagógica y el impacto positivo en la calidad de vida de nuestros estudiantes y sus familias.</p>
+
+                <div class="gallery-card" data-aos="zoom-in" data-aos-delay="100">
+                    <video controls poster="autismo.jpg">
+                        <source src="VID-20260404-WA0069.mp4" type="video/mp4">
+                        Tu navegador no soporta video.
+                    </video>
+                    <div class="info">
+                        <span class="badge bg-info mb-2">Video</span>
+                        <p class="mb-0">Bailoterapia en celebración de aniversario</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="3.jpeg" alt="Charla">
+                    <div class="info">
+                        <p class="mb-0">Charla de inauguración</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card" data-aos="zoom-in" data-aos-delay="300">
+                    <video controls>
+                        <source src="VID-20260404-WA0070.mp4" type="video/mp4">
+                    </video>
+                    <div class="info">
+                        <span class="badge bg-info mb-2">Video</span>
+                        <p class="mb-0">Carnaval 2026 en la comunidad</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card" data-aos="zoom-in">
+                    <img src="4.jpeg" alt="Grupo">
+                    <div class="info">
+                        <p class="mb-0">Grupo de atención especializada</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card" data-aos="zoom-in">
+                    <video controls>
+                        <source src="VID-20260404-WA0071.mp4" type="video/mp4">
+                    </video>
+                    <div class="info">
+                        <span class="badge bg-info mb-2">Video</span>
+                        <p class="mb-0">Participación en la cumbre educativa</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="multimedia" class="py-5 bg-light">
+    <section id="contacto" class="py-5 bg-light border-top">
         <div class="container py-5">
-            <div class="row mb-5 align-items-end" data-aos="fade-up">
-                <div class="col-lg-6">
-                    <h2 class="display-4 fw-900 mb-0">Evidencia de <span class="text-primary">Progreso</span></h2>
-                    <p class="lead mt-3 text-muted">A continuación, presentamos el trabajo realizado en nuestras aulas y talleres especializados.</p>
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">¿Cómo encontrarnos? 📍</h2>
+                <p class="text-muted">Estamos ubicados en el corazón de Cartanal, brindando luz a toda la comunidad de Santa Teresa del Tuy.</p>
+            </div>
+
+            <div class="row justify-content-center g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                        <div class="text-primary mb-3"><i class="fas fa-envelope fa-3x"></i></div>
+                        <h5>Correo Electrónico</h5>
+                        <p class="text-muted small">ieesimonrodriguezextension@gmail.com</p>
+                    </div>
                 </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a href="#" class="btn btn-dark rounded-pill px-4">Más Videos en YouTube</a>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                        <div class="text-success mb-3"><i class="fas fa-map-marked-alt fa-3x"></i></div>
+                        <h5>Dirección Exacta</h5>
+                        <p class="text-muted small">Sector 4, Av. 5, Cartanal, Municipio Independencia, Edo. Miranda.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="row g-4">
-                <div class="col-lg-6" data-aos="zoom-in">
-                    <div class="video-box-master">
-                        <div class="video-wrapper-inner">
-                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Institucional 1" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-desc">
-                            <h4>Taller de Autonomía Funcional</h4>
-                            <p class="text-justify">En este segmento visualizamos la aplicación de estrategias para la vida diaria, donde los estudiantes aprenden habilidades básicas que les permiten valerse por sí mismos en el hogar y la escuela.</p>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <span class="text-primary fw-bold"><i class="fas fa-calendar-alt me-2"></i>Proyecto 2026</span>
-                                <span class="badge bg-pastel-blue text-primary rounded-pill px-3">Educación Especial</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="video-box-master">
-                        <div class="video-wrapper-inner">
-                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Institucional 2" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-desc">
-                            <h4>Actividades Psicomotoras en Cartanal</h4>
-                            <p class="text-justify">Documentamos el uso de la Concha Acústica de Quebrada de Yare y nuestras instalaciones para el desarrollo de la motricidad gruesa, fundamental para el equilibrio y la salud física de los niños.</p>
-                            <hr>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <span class="text-primary fw-bold"><i class="fas fa-clock me-2"></i>Duración: 4:20 min</span>
-                                <span class="badge bg-pastel-green text-success rounded-pill px-3">Terapia Física</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="alert alert-info mt-5 text-center rounded-pill">
+                <strong>Horario de Atención:</strong> Lunes a Viernes: 7:00 AM - 12:30 PM
             </div>
         </div>
     </section>
 
-    <section id="galeria" class="py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-4 fw-900">Nuestros Momentos 📸</h2>
-                <p class="text-muted fs-5">Capturas de alegría, aprendizaje y superación.</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-3 col-6" data-aos="flip-left"><div class="gallery-item"><img src="2.jpeg" alt="G1"></div></div>
-                <div class="col-md-3 col-6" data-aos="flip-left" data-aos-delay="100"><div class="gallery-item"><img src="3.jpeg" alt="G2"></div></div>
-                <div class="col-md-3 col-6" data-aos="flip-left" data-aos-delay="200"><div class="gallery-item"><img src="4.jpeg" alt="G3"></div></div>
-                <div class="col-md-3 col-6" data-aos="flip-left" data-aos-delay="300"><div class="gallery-item"><img src="5.jpeg" alt="G4"></div></div>
-            </div>
-        </div>
-    </section>
-    <section id="contacto" class="py-5 bg-white">
-        <div class="container py-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-5" data-aos="fade-right">
-                    <h2 class="display-5 fw-900 mb-4 text-primary">¡Visítanos! 📍</h2>
-                    <p class="fs-5 mb-5 text-muted">Nuestra sede principal se encuentra en el Sector 4 de Cartanal. Atendemos a todas las comunidades adyacentes de Santa Teresa del Tuy.</p>
-                    
-                    <div class="d-flex mb-4">
-                        <div class="bg-pastel-blue p-3 rounded-4 text-primary me-4"><i class="fas fa-map-location-dot fa-2x"></i></div>
-                        <div>
-                            <h5 class="fw-bold">Dirección Exacta</h5>
-                            <p class="mb-0 text-muted">Avenida Principal de Cartanal, Sector 4, Municipio Independencia, Edo. Miranda.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex mb-4">
-                        <div class="bg-pastel-red p-3 rounded-4 text-danger me-4"><i class="fas fa-clock fa-2x"></i></div>
-                        <div>
-                            <h5 class="fw-bold">Horario de Puertas Abiertas</h5>
-                            <p class="mb-0 text-muted">Lunes a Viernes de 7:00 AM a 12:30 PM.</p>
-                        </div>
-                    </div>
-                    <div class="mt-5 p-4 border-start border-primary border-5 bg-light rounded-4">
-                        <p class="mb-0 fw-bold">"Ser diferente es algo común, aceptarlo es una virtud."</p>
-                    </div>
-                </div>
-                <div class="col-lg-7" data-aos="fade-left">
-                    <div class="map-container-engineering">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15714.471850125586!2d-66.69089945000001!3d10.211462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2aff299c82c611%3A0x6b772c7a7b8e5c8!2sCartanal%2C%20Edo.%20Miranda!5e0!3m2!1ses!2sve!4v1712270000000!5m2!1ses!2sve" 
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer-engineering">
-        <div class="container text-center text-md-start">
-            <div class="row g-4">
-                <div class="col-lg-5">
-                    <h2 class="fw-900 mb-4">IEE SIMÓN RODRÍGUEZ</h2>
-                    <p class="opacity-75 fs-5">Dedicación, amor y pedagogía al servicio del Tuy. Formamos para la libertad y el futuro.</p>
-                    <div class="mt-4">
-                        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 offset-lg-1">
-                    <h5 class="fw-bold mb-4">Navegación</h5>
-                    <a href="#inicio" class="footer-link">Página Inicial</a>
-                    <a href="#nosotros" class="footer-link">Nuestra Misión</a>
-                    <a href="#multimedia" class="footer-link">Videos Informativos</a>
-                    <a href="#galeria" class="footer-link">Galería de Fotos</a>
-                </div>
-                <div class="col-lg-3">
-                    <h5 class="fw-bold mb-4">Soporte Técnico</h5>
-                    <p class="small opacity-50">Desarrollado para UNEFA - Sistemas por Felipe Rodríguez.</p>
-                    <p class="small opacity-50">© 2026 Todos los derechos reservados.</p>
-                </div>
+    <footer class="py-5 bg-white text-center">
+        <div class="container">
+            <h4 class="fw-bold mb-4">IEE SIMÓN RODRÍGUEZ</h4>
+            <p class="text-muted max-width-600 mx-auto mb-5">
+                Dedicados a la formación integral de niños, niñas y jóvenes con necesidades educativas especiales. Nuestra misión es el amor convertido en educación.
+            </p>
+            <div class="border-top pt-4">
+                <p class="small text-secondary mb-0">© 2026 Instituto de Educación Especial Simón Rodríguez - Extensión Cartanal.</p>
+                <p class="small text-secondary">Diseñado con amor e inclusión para la comunidad de Miranda.</p>
+                <p class="mt-2" style="font-size: 0.7rem; opacity: 0.3;">System Build: 662-LR | Developer: Felipe Rodríguez</p>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        // INICIALIZACIÓN DE LIBRERÍA AOS (ANIMACIONES)
-        AOS.init({ duration: 1200, once: true, easing: 'ease-in-out' });
+        // Inicializar animaciones de entrada
+        AOS.init({ duration: 800, once: true });
 
-        // LÓGICA DE NAVBAR DINÁMICO
-        window.addEventListener('scroll', function() {
-            var nav = document.querySelector('.navbar-main');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
+        // Lógica para los acordeones de Áreas de Atención
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            // Cerrar otros si estuvieran abiertos (opcional)
+            document.querySelectorAll('.area-content').forEach(item => {
+                if(item !== content) {
+                    item.classList.remove('show');
+                    item.previousElementSibling.classList.remove('active');
+                    item.previousElementSibling.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
+                }
+            });
+
+            content.classList.toggle('show');
+            element.classList.toggle('active');
+            
+            if (content.classList.contains('show')) {
+                icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
             } else {
-                nav.classList.remove('scrolled');
+                icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
             }
-        });
+        }
 
-        // VALIDACIÓN DE SISTEMA
-        console.log("Sistema IEE Simón Rodríguez - Cartanal v2.0.662");
-        console.log("Compilación exitosa. Diseñado por el Señor Felipe.");
+        // Simulación de carga del sistema para auditoría de líneas
+        window.onload = () => {
+            console.log("IEE Simón Rodríguez Web Engine v2.0.662 Online");
+        };
+
+        function toggleMenu() {
+            alert("Menú de navegación en desarrollo para versión móvil.");
+        }
     </script>
 </body>
 </html>
