@@ -1,662 +1,256 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IEE Simón Rodríguez | Extensión Cartanal - Ser diferente es algo Común</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEE Simon Rodriguez | Extension Cartanal - Ser diferente es algo Comun</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <style>
-        :root {
-            --p-blue: #B3E5FC;
-            --p-blue-dark: #81D4FA;
-            --p-green: #C8E6C9;
-            --p-green-dark: #A5D6A7;
-            --p-red: #FFCDD2;
-            --p-red-dark: #EF9A9A;
-            --p-yellow: #FFF9C4;
-            
-            --primary-brand: #4A90E2;
-            --text-dark: #2D3436;
-            --white: #ffffff;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+    <style>
+        :root {
+            --p-blue: #B3E5FC;
+            --p-blue-dark: #81D4FA;
+            --p-green: #C8E6C9;
+            --p-green-dark: #A5D6A7;
+            --p-red: #FFCDD2;
+            --p-red-dark: #EF9A9A;
+            --p-yellow: #FFF9C4;
+            --primary-brand: #4A90E2;
+            --text-dark: #2D3436;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-        body {
-            font-family: 'Quicksand', sans-serif;
-            color: var(--text-dark);
-            background-color: #fcfcfc;
-            overflow-x: hidden;
-            line-height: 1.7;
-        }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-dark);
+            background-color: #fcfcfc;
+            overflow-x: hidden;
+            line-height: 1.7;
+            margin: 0;
+        }
 
-        h1, h2, h3, h4, .nunito {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 800;
-        }
+        h1, h2, h3, h4, .nunito {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+        }
 
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 3px solid var(--p-blue);
-            padding: 1rem 0;
-            transition: var(--transition);
-        }
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--p-blue);
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
 
-        .navbar-brand {
-            font-size: 1.6rem;
-            color: var(--primary-brand) !important;
-        }
+        .navbar-brand {
+            font-size: 1.4rem;
+            color: var(--primary-brand) !important;
+            white-space: normal;
+        }
 
-        .nav-link {
-            font-weight: 700;
-            margin: 0 15px;
-            color: var(--text-dark) !important;
-            border-radius: 12px;
-            transition: var(--transition);
-        }
+        .nav-link {
+            font-weight: 700;
+            margin: 0 10px;
+            color: var(--text-dark) !important;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
 
-        .nav-link:hover {
-            background: var(--p-blue);
-            color: var(--primary-brand) !important;
-        }
+        .nav-link:hover {
+            background: var(--p-blue);
+            color: var(--primary-brand) !important;
+        }
 
-        .hero-section {
-            padding: 20px 0;
-            background: linear-gradient(180deg, var(--white) 0%, var(--p-blue) 100%);
-        }
+        .hero-section {
+            padding: 20px 0;
+            background: linear-gradient(180deg, var(--white) 0%, var(--p-blue) 100%);
+        }
 
-        #mainCarousel {
-            border-radius: 40px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            border: 8px solid var(--white);
-        }
+        #mainCarousel {
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 8px solid var(--white);
+        }
 
-        .carousel-item {
-            height: 650px;
-            position: relative;
-        }
+        .carousel-item {
+            height: 500px;
+            position: relative;
+        }
 
-        .carousel-item img {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-            transition: transform 5s ease;
-        }
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            transition: transform 5s ease;
+        }
 
-        .carousel-item.active img {
-            transform: scale(1.1);
-        }
+        .carousel-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+        }
 
-        .carousel-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
-        }
+        .carousel-caption {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+            border-radius: 30px;
+            padding: 25px;
+            bottom: 10%;
+            max-width: 500px;
+            margin: 0 auto;
+            border-bottom: 8px solid var(--primary-brand);
+        }
 
-        .carousel-caption {
-            background: rgba(255, 255, 255, 0.9);
-            color: var(--text-dark);
-            border-radius: 30px;
-            padding: 40px;
-            bottom: 10%;
-            max-width: 600px;
-            margin: 0 auto;
-            border-bottom: 10px solid var(--primary-brand);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
+        .section-padding { padding: 80px 0; }
+        .bg-red-pastel { background-color: var(--p-red); }
+        .bg-green-pastel { background-color: var(--p-green); }
+        .bg-blue-pastel { background-color: var(--p-blue); }
 
-        .section-padding { padding: 100px 0; }
-        .bg-red-pastel { background-color: var(--p-red); position: relative; }
-        .bg-green-pastel { background-color: var(--p-green); }
-        .bg-blue-pastel { background-color: var(--p-blue); }
+        .value-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 35px;
+            text-align: center;
+            height: 100%;
+            transition: var(--transition);
+        }
 
-        .value-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 35px;
-            text-align: center;
-            height: 100%;
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
+        .value-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
 
-        .value-card:hover {
-            transform: translateY(-20px);
-            border-color: var(--p-red-dark);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
+        .custom-acc .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 20px !important;
+            overflow: hidden;
+        }
 
-        .value-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: block;
-        }
+        .custom-acc .accordion-button {
+            padding: 20px;
+            font-weight: 800;
+        }
 
-        .custom-acc .accordion-item {
-            border: none;
-            margin-bottom: 20px;
-            border-radius: 25px !important;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
 
-        .custom-acc .accordion-button {
-            padding: 25px;
-            font-weight: 800;
-            font-size: 1.3rem;
-            background-color: var(--white);
-        }
+        .footer-main {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+            border-radius: 50px 50px 0 0;
+            text-align: center;
+        }
 
-        .custom-acc .accordion-button:not(.collapsed) {
-            background-color: var(--p-green-dark);
-            color: var(--text-dark);
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 25px;
-            overflow: hidden;
-            margin-bottom: 25px;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(74, 144, 226, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: 0.3s;
-        }
-
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-
-        .contact-box {
-            background: var(--white);
-            border-radius: 40px;
-            padding: 60px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
-        }
-
-        .map-container {
-            border-radius: 30px;
-            overflow: hidden;
-            border: 12px solid var(--white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            height: 100%;
-            min-height: 400px;
-        }
-
-        .footer-main {
-            background: var(--text-dark);
-            color: var(--white);
-            padding: 80px 0 40px;
-            border-radius: 70px 70px 0 0;
-        }
-
-        .social-links a {
-            font-size: 1.5rem;
-            color: var(--p-blue);
-            margin-right: 20px;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover { color: var(--white); transform: scale(1.2); }
-
-        .btn-custom {
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .btn-blue { background: var(--primary-brand); color: white; border: none; }
-        .btn-blue:hover { background: var(--text-dark); color: white; transform: scale(1.05); }
-
-    </style>
+        /* Ajustes para Movil */
+        @media (max-width: 768px) {
+            .carousel-item { height: 400px; }
+            .carousel-caption { padding: 15px; width: 90%; }
+            .navbar-brand { font-size: 1.1rem; }
+            .section-padding { padding: 50px 0; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <span style="color: #FF6B6B;">❤</span> IEE SIMÓN RODRÍGUEZ - SER DIFERENTE ES ALGO COMÚN
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navMain">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">🏠 Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#nosotros">🌈 Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#especialidades">🧩 Áreas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria">📸 Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">📍 Ubicación</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span style="color: #FF6B6B;">❤</span> IEE SIMON RODRIGUEZ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#especialidades">Areas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <section class="hero-section" id="inicio">
-        <div class="container">
-            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="6.jpeg" alt="Educación Especial 1">
-                        <div class="carousel-overlay"></div>
-                        <div class="carousel-caption d-none d-md-block animate__animated animate__fadeInUp">
-                            <h2 class="display-4">Aprender Jugando</h2>
-                            <p class="fs-5">En Cartanal, cada sonrisa es un paso hacia la independencia y el éxito personal de nuestros estudiantes.</p>
-                            <a href="#contacto" class="btn btn-custom btn-blue">Conócenos</a>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="Logo colegio especial.jpeg" alt="Educación Especial 2">
-                        <div class="carousel-overlay"></div>
-                        <div class="carousel-caption d-none d-md-block animate__animated animate__fadeInUp">
-                            <h2 class="display-4">Nuestro Compromiso con la Inclusión</h2>
-                            <p class="fs-5">En el IEE Simón Rodríguez Extensión 'Cartanal', la inclusión no es solo un concepto, es la base de todo lo que hacemos. Nos esforzamos por crear un ambiente donde la diversidad sea celebrada y donde cada estudiante se sienta valorado, respetado y capaz de alcanzar sus sueños.</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="autismo.jpg" alt="Educación Especial 3">
-                        <div class="carousel-overlay"></div>
-                        <div class="carousel-caption d-none d-md-block animate__animated animate__fadeInUp">
-                            <h2 class="display-4">Fomentando el Aprendizaje y la Inclusión</h2>
-                            <p class="fs-5">En el IEE "Simón Rodríguez" Extensión Cartanal, nos dedicamos a crear un entorno educativo donde cada niño y joven con necesidades especiales pueda desarrollarse plenamente. Creemos en el potencial ilimitado de cada individuo y trabajamos incansablemente para proporcionar las herramientas y el apoyo necesarios para su crecimiento.</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </div>
-    </section>
+    <section class="hero-section" id="inicio">
+        <div class="container">
+            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="6.jpeg" alt="Educacion">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-caption">
+                            <h3>Aprender Jugando</h3>
+                            <p>Cada sonrisa es un paso hacia la independencia.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Logo colegio especial.jpeg" alt="Inclusion">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-caption">
+                            <h3>Compromiso</h3>
+                            <p>Donde la diversidad es celebrada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section class="section-padding bg-red-pastel" id="nosotros">
-    <div class="container" data-aos="fade-up">
-        <div class="text-center mb-5">
-            <h2 class="display-5">Nuestro Propósito de Vida 💗</h2>
-            <p class="lead">Transformando la educación especial en el Sector Cartanal.</p>
-        </div>
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-5">
-                <div class="value-card">
-                    <span class="value-icon">🤝</span>
-                    <h3>Misión</h3>
-                    <p class="fs-5">Fomentar la autonomía del estudiante como eje central de su desarrollo integral y social.</p>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="value-card">
-                    <span class="value-icon">🌈</span>
-                    <h3>Visión</h3>
-                    <p class="fs-5">Ser una institución innovadora que garantice una educación de calidad, maximizando el trabajo de los docentes para potenciar las capacidades de cada estudiante.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <section class="section-padding bg-red-pastel" id="nosotros">
+        <div class="container" data-aos="fade-up">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5">
+                    <div class="value-card">
+                        <h3>Mision</h3>
+                        <p>Fomentar la autonomia integral y social del estudiante.</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="value-card">
+                        <h3>Vision</h3>
+                        <p>Ser una institucion innovadora con educacion de calidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section-padding bg-green-pastel" id="especialidades">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6" data-aos="fade-right">
-                <h2 class="display-5 mb-4">Áreas de Atención Especializada 🧩</h2>
-                <p class="fs-5 mb-5">Contamos con personal capacitado para el abordaje integral de:</p>
-                <div class="accordion custom-acc" id="accEspecial">
-                    
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#item1">
-                                💡 Discapacidad Intelectual (Retardo Mental)
-                            </button>
-                        </h2>
-                        <div id="item1" class="accordion-collapse collapse show" data-bs-parent="#accEspecial">
-                            <div class="accordion-body">
-                                Nos enfocamos en el desarrollo de habilidades adaptativas, cognitivas y sociales, adaptando el ritmo de enseñanza a las necesidades individuales para lograr una integración efectiva en su entorno.
-                            </div>
-                        </div>
-                    </div>
+    <section class="section-padding" id="galeria">
+        <div class="container">
+            <h2 class="text-center mb-5">Nuestra Galeria 📸</h2>
+            <div class="row g-3">
+                <div class="col-6 col-md-3"><div class="gallery-item"><img src="2.jpeg" class="img-fluid"></div></div>
+                <div class="col-6 col-md-3"><div class="gallery-item"><img src="3.jpeg" class="img-fluid"></div></div>
+                <div class="col-6 col-md-3"><div class="gallery-item"><img src="4.jpeg" class="img-fluid"></div></div>
+                <div class="col-6 col-md-3"><div class="gallery-item"><img src="5.jpeg" class="img-fluid"></div></div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#item2">
-                                🎨 Síndrome de Down
-                            </button>
-                        </h2>
-                        <div id="item2" class="accordion-collapse collapse" data-bs-parent="#accEspecial">
-                            <div class="accordion-body">
-                                Potenciamos el lenguaje, la psicomotricidad y la autonomía personal a través de estrategias lúdicas y pedagógicas que celebran la diversidad y el talento de cada alumno.
-                            </div>
-                        </div>
-                    </div>
+    <footer class="footer-main">
+        <div class="container">
+            <h3>IEE SIMON RODRIGUEZ</h3>
+            <p>© 2026 | Extension Cartanal | Miranda, Venezuela</p>
+        </div>
+    </footer>
 
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#item3">
-                                ♿ Discapacidad Físico Motora
-                            </button>
-                        </h2>
-                        <div id="item3" class="accordion-collapse collapse" data-bs-parent="#accEspecial">
-                            <div class="accordion-body">
-                                Implementamos adaptaciones curriculares y tecnológicas para garantizar el acceso al aprendizaje, eliminando barreras y fomentando la independencia física de nuestros estudiantes.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#item4">
-                                🧩 Trastorno del Espectro Autista (TEA)
-                            </button>
-                        </h2>
-                        <div id="item4" class="accordion-collapse collapse" data-bs-parent="#accEspecial">
-                            <div class="accordion-body">
-                                Abordaje especializado basado en la comunicación alternativa, la estructuración del ambiente y el apoyo conductual positivo para mejorar la interacción social y la autorregulación.
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-lg-6 mt-5 mt-lg-0" data-aos="zoom-in">
-                <img src="5.jpeg" class="img-fluid rounded-5 shadow-lg" alt="Especialidades">
-            </div>
-        </div>
-    </div>
-</section>
-
-    <section class="section-padding" id="galeria" style="background-color: #f8f9fa;">
-    <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-            <span class="badge bg-primary px-3 py-2 rounded-pill mb-2">Multimedia</span>
-            <h2 class="display-5 fw-bold">Nuestra Galería de Alegría 📸🎥</h2>
-            <p class="lead text-muted">Un vistazo vibrante a las actividades, momentos y rostros en nuestra sede de Cartanal.</p>
-        </div>
-
-        <div class="row g-4">
-            
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <img src="2.jpeg" class="card-img-top" alt="Momento en Cartanal" style="aspect-ratio: 16/9; object-fit: cover;">
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            7mo Aniversario IEE
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <img src="3.jpeg" class="card-img-top" alt="Actividad en Cartanal" style="aspect-ratio: 16/9; object-fit: cover;">
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            Charla de inauguracion
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <img src="4.jpeg" class="card-img-top" alt="Sonrisas en Cartanal" style="aspect-ratio: 16/9; object-fit: cover;">
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            Grupo de atencion
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <img src="5.jpeg" class="card-img-top" alt="Evento en Cartanal" style="aspect-ratio: 16/9; object-fit: cover;">
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            Inauguracion del C.E.N
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <img src="6.jpeg" class="card-img-top" alt="Grupo en Cartanal" style="aspect-ratio: 16/9; object-fit: cover;">
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            Logo complejo C.E.N
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <img src="autismo.jpg" class="card-img-top" alt="Día del Autismo" style="aspect-ratio: 16/9; object-fit: cover;">
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            Nuestro compromiso con la inclusión...
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="700">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <img src="Logo colegio especial.jpeg" class="card-img-top" alt="Logo de la Institución" style="aspect-ratio: 16/9; object-fit: contain;">
-                    <div class="card-body bg-light text-center">
-                        <p class="card-text small text-secondary fw-bold">
-                            Sede Cartanal
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="800">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="video-container" style="position: relative; background: #000;">
-                        <video autoplay muted loop playsinline class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
-                            <source src="VID-20260404-WA0069.mp4" type="video/mp4">
-                        </video>
-                        <div class="position-absolute top-0 start-0 m-2">
-                            <span class="badge bg-primary opacity-75">Video</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            Participacion en la cumbre educativa
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="900">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="video-container" style="position: relative; background: #000;">
-                        <video autoplay muted loop playsinline class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
-                            <source src="VID-20260404-WA0070.mp4" type="video/mp4">
-                        </video>
-                        <div class="position-absolute top-0 start-0 m-2">
-                            <span class="badge bg-primary opacity-75">Video</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            Recibimiento en su nueva escuela
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="1000">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="video-container" style="position: relative; background: #000;">
-                        <video autoplay muted loop playsinline class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
-                            <source src="VID-20260404-WA0071.mp4" type="video/mp4">
-                        </video>
-                        <div class="position-absolute top-0 start-0 m-2">
-                            <span class="badge bg-primary opacity-75">Video</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            Pijamada
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="1100">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="video-container" style="position: relative; background: #000;">
-                        <video autoplay muted loop playsinline class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
-                            <source src="VID-20260404-WA0073.mp4" type="video/mp4">
-                        </video>
-                        <div class="position-absolute top-0 start-0 m-2">
-                            <span class="badge bg-primary opacity-75">Video</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            Bailoterapia en celebracion de aniversario
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="1200">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="video-container" style="position: relative; background: #000;">
-                        <video autoplay muted loop playsinline class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
-                            <source src="VID-20260404-WA0079.mp4" type="video/mp4">
-                        </video>
-                        <div class="position-absolute top-0 start-0 m-2">
-                            <span class="badge bg-primary opacity-75">Video</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text small text-secondary">
-                            Carnaval 2026
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-    <section class="section-padding bg-blue-pastel" id="contacto">
-        <div class="container">
-            <div class="contact-box" data-aos="fade-up">
-                <div class="row g-5">
-                    <div class="col-lg-6">
-                        <h2 class="mb-4">¿Cómo encontrarnos? 📍</h2>
-                        <p class="mb-5">Estamos ubicados en el corazón de Cartanal, brindando luz a toda la comunidad de Santa Teresa del Tuy.</p>
-                        
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="p-3 bg-primary text-white rounded-circle me-3"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <h5 class="fw-bold mb-0">Correo Electrónico</h5>
-                                <p class="mb-0">ieesimonrodriguezextension@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-center mb-5">
-                            <div class="p-3 bg-success text-white rounded-circle me-3"><i class="fas fa-map-marked-alt"></i></div>
-                            <div>
-                                <h5 class="fw-bold mb-0">Dirección Exacta</h5>
-                                <p class="mb-0">Sector 4, Av. 5, Cartanal, Municipio Independencia, Edo. Miranda.</p>
-                            </div>
-                        </div>
-
-                        <div class="alert alert-info border-0 rounded-4"> 
-                            <strong>Horario de Atención:</strong><br>
-                            Lunes a Viernes: 7:00 AM - 12:30 PM <br>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="map-container">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15712.348636413812!2d-66.7460616!3d10.230278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a44015694c9a5%3A0x6334a17056e3008!2sCartanal%2C%20Miranda!5e0!3m2!1ses-419!2sve!4v1715800000000!5m2!1ses-419!2sve" 
-                                width="100%" 
-                                height="100%" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer-main">
-        <div class="container text-center">
-            <h2 class="mb-4 nunito">IEE SIMÓN RODRÍGUEZ</h2>
-            <p class="opacity-75 mb-5 mx-auto" style="max-width: 600px;">
-                Dedicados a la formación integral de niños, niñas y jóvenes con necesidades educativas especiales. Nuestra misión es el amor convertido en educación.
-            </p>
-            <hr class="opacity-25 mb-4">
-            <p class="small opacity-50 mb-0">
-                © 2026 Instituto de Educación Especial Simón Rodríguez - Extensión Cartanal.<br>
-                Diseñado con amor e inclusión para la comunidad de Miranda.
-            </p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-
-        window.onscroll = function() {
-            var nav = document.querySelector('.navbar');
-            if (window.pageYOffset > 100) {
-                nav.style.padding = "0.5rem 0";
-                nav.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
-            } else {
-                nav.style.padding = "1rem 0";
-                nav.style.boxShadow = "none";
-            }
-        };
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
