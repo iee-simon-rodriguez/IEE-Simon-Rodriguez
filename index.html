@@ -13,25 +13,26 @@
 
     <style>
         :root {
-            --p-blue: #E3F2FD;
-            --p-blue-dark: #0288D1;
-            --p-green: #E8F5E9;
-            --p-green-dark: #2E7D32;
-            --p-red: #FFEBEE;
-            --p-red-dark: #C62828;
-            --p-yellow: #FFFDE7;
-            --primary-brand: #1976D2;
-            --text-dark: #2C3E50;
+            --p-blue: #B3E5FC;
+            --p-blue-dark: #81D4FA;
+            --p-green: #C8E6C9;
+            --p-green-dark: #A5D6A7;
+            --p-red: #FFCDD2;
+            --p-red-dark: #EF9A9A;
+            --p-yellow: #FFF9C4;
+            
+            --primary-brand: #4A90E2;
+            --text-dark: #2D3436;
             --white: #ffffff;
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         body {
             font-family: 'Quicksand', sans-serif;
             color: var(--text-dark);
-            background-color: #f8faff;
+            background-color: #fcfcfc;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         h1, h2, h3, h4, .nunito {
@@ -39,163 +40,195 @@
             font-weight: 800;
         }
 
-        /* Navbar Estilizada */
         .navbar {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
-            border-bottom: 2px solid var(--p-blue);
-            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--p-blue);
+            padding: 1rem 0;
             transition: var(--transition);
         }
 
         .navbar-brand {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: var(--primary-brand) !important;
-            letter-spacing: -0.5px;
         }
 
         .nav-link {
             font-weight: 700;
-            margin: 0 10px;
+            margin: 0 15px;
             color: var(--text-dark) !important;
-            padding: 8px 18px !important;
-            border-radius: 50px;
+            border-radius: 12px;
             transition: var(--transition);
         }
 
         .nav-link:hover {
             background: var(--p-blue);
             color: var(--primary-brand) !important;
-            transform: translateY(-2px);
         }
 
-        /* Hero & Carrusel */
         .hero-section {
-            padding: 40px 0;
-            background: linear-gradient(180deg, #ffffff 0%, #eef6ff 100%);
+            padding: 20px 0;
+            background: linear-gradient(180deg, var(--white) 0%, var(--p-blue) 100%);
         }
 
         #mainCarousel {
-            border-radius: 30px;
+            border-radius: 40px;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border: 10px solid var(--white);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 8px solid var(--white);
         }
 
         .carousel-item {
-            height: 550px;
+            height: 650px;
+            position: relative;
         }
 
         .carousel-item img {
             object-fit: cover;
             height: 100%;
-            filter: brightness(0.85);
+            width: 100%;
+            transition: transform 5s ease;
+        }
+
+        .carousel-item.active img {
+            transform: scale(1.1);
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
         }
 
         .carousel-caption {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.9);
             color: var(--text-dark);
-            border-radius: 25px;
-            padding: 30px;
-            bottom: 50px;
-            max-width: 550px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-left: 8px solid var(--primary-brand);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-radius: 30px;
+            padding: 40px;
+            bottom: 10%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-bottom: 10px solid var(--primary-brand);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
-        /* Secciones y Tarjetas */
-        .section-padding { padding: 80px 0; }
-        
+        .section-padding { padding: 100px 0; }
+        .bg-red-pastel { background-color: var(--p-red); position: relative; }
+        .bg-green-pastel { background-color: var(--p-green); }
+        .bg-blue-pastel { background-color: var(--p-blue); }
+
         .value-card {
             background: var(--white);
-            padding: 35px;
-            border-radius: 25px;
+            padding: 40px;
+            border-radius: 35px;
             text-align: center;
             height: 100%;
             transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+            border: 2px solid transparent;
         }
 
         .value-card:hover {
-            transform: translateY(-12px);
+            transform: translateY(-20px);
+            border-color: var(--p-red-dark);
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            border-color: var(--primary-brand);
         }
 
-        .value-icon { font-size: 3.5rem; margin-bottom: 15px; display: block; }
+        .value-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
 
-        /* Acordeón Personalizado */
         .custom-acc .accordion-item {
             border: none;
-            margin-bottom: 15px;
-            border-radius: 20px !important;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+            border-radius: 25px !important;
             overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
         }
 
         .custom-acc .accordion-button {
-            padding: 20px;
-            font-weight: 700;
+            padding: 25px;
+            font-weight: 800;
+            font-size: 1.3rem;
             background-color: var(--white);
-            border: none;
         }
 
         .custom-acc .accordion-button:not(.collapsed) {
-            background-color: var(--p-green);
-            color: var(--p-green-dark);
-            box-shadow: none;
+            background-color: var(--p-green-dark);
+            color: var(--text-dark);
         }
 
-        /* Galería */
-        .card-gallery {
-            border-radius: 20px;
+        .gallery-item {
+            position: relative;
+            border-radius: 25px;
             overflow: hidden;
-            transition: var(--transition);
-            border: none;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-        }
-
-        .card-gallery:hover {
-            transform: scale(1.03);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-        }
-
-        .video-container video {
+            margin-bottom: 25px;
             cursor: pointer;
-            border-bottom: 4px solid var(--primary-brand);
         }
 
-        /* Contacto y Mapa */
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(74, 144, 226, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
         .contact-box {
             background: var(--white);
-            border-radius: 30px;
-            padding: 50px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            border-radius: 40px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.05);
         }
 
         .map-container {
-            border-radius: 20px;
+            border-radius: 30px;
             overflow: hidden;
-            border: 8px solid #f0f4f8;
+            border: 12px solid var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             height: 100%;
-            min-height: 350px;
+            min-height: 400px;
         }
 
-        /* Footer */
         .footer-main {
-            background: #1a252f;
+            background: var(--text-dark);
             color: var(--white);
-            padding: 60px 0 30px;
-            border-top: 5px solid var(--primary-brand);
+            padding: 80px 0 40px;
+            border-radius: 70px 70px 0 0;
         }
+
+        .social-links a {
+            font-size: 1.5rem;
+            color: var(--p-blue);
+            margin-right: 20px;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover { color: var(--white); transform: scale(1.2); }
 
         .btn-custom {
-            padding: 12px 30px;
+            padding: 15px 40px;
             border-radius: 50px;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: var(--transition);
         }
 
@@ -209,18 +242,18 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">
-                <span style="color: #FF6B6B;"><i class="fas fa-heart"></i></span> IEE SIMÓN RODRÍGUEZ
+                <span style="color: #FF6B6B;">❤</span> IEE SIMÓN RODRÍGUEZ - SER DIFERENTE ES ALGO COMÚN
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navMain">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#especialidades">Áreas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto">Ubicación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#inicio">🏠 Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">🌈 Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#especialidades">🧩 Áreas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">📸 Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">📍 Ubicación</a></li>
                 </ul>
             </div>
         </div>
@@ -228,28 +261,36 @@
 
     <section class="hero-section" id="inicio">
         <div class="container">
-            <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+                </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="6.jpeg" class="d-block w-100" alt="Educación Especial">
+                        <img src="6.jpeg" alt="Educación Especial 1">
+                        <div class="carousel-overlay"></div>
                         <div class="carousel-caption d-none d-md-block animate__animated animate__fadeInUp">
-                            <h2 class="display-6">Aprender Jugando</h2>
-                            <p>Cada sonrisa es un paso hacia la independencia de nuestros estudiantes en Cartanal.</p>
-                            <a href="#contacto" class="btn btn-custom btn-blue">Conócenos ahora</a>
+                            <h2 class="display-4">Aprender Jugando</h2>
+                            <p class="fs-5">En Cartanal, cada sonrisa es un paso hacia la independencia y el éxito personal de nuestros estudiantes.</p>
+                            <a href="#contacto" class="btn btn-custom btn-blue">Conócenos</a>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="Logo colegio especial.jpeg" class="d-block w-100" alt="Inclusión">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2 class="display-6">Compromiso Real</h2>
-                            <p>La inclusión es la base de todo lo que hacemos por nuestra comunidad.</p>
+                        <img src="Logo colegio especial.jpeg" alt="Educación Especial 2">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-caption d-none d-md-block animate__animated animate__fadeInUp">
+                            <h2 class="display-4">Nuestro Compromiso con la Inclusión</h2>
+                            <p class="fs-5">En el IEE Simón Rodríguez Extensión 'Cartanal', la inclusión no es solo un concepto, es la base de todo lo que hacemos. Nos esforzamos por crear un ambiente donde la diversidad sea celebrada y donde cada estudiante se sienta valorado, respetado y capaz de alcanzar sus sueños.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="autismo.jpg" class="d-block w-100" alt="TEA">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2 class="display-6">Potencial Ilimitado</h2>
-                            <p>Proporcionamos herramientas para el crecimiento integral de cada niño.</p>
+                        <img src="autismo.jpg" alt="Educación Especial 3">
+                        <div class="carousel-overlay"></div>
+                        <div class="carousel-caption d-none d-md-block animate__animated animate__fadeInUp">
+                            <h2 class="display-4">Fomentando el Aprendizaje y la Inclusión</h2>
+                            <p class="fs-5">En el IEE "Simón Rodríguez" Extensión Cartanal, nos dedicamos a crear un entorno educativo donde cada niño y joven con necesidades especiales pueda desarrollarse plenamente. Creemos en el potencial ilimitado de cada individuo y trabajamos incansablemente para proporcionar las herramientas y el apoyo necesarios para su crecimiento.</p>
                         </div>
                     </div>
                 </div>
@@ -263,156 +304,321 @@
         </div>
     </section>
 
-    <section class="section-padding" id="nosotros" style="background-color: var(--p-red);">
+    <section class="section-padding bg-red-pastel" id="nosotros">
         <div class="container" data-aos="fade-up">
             <div class="text-center mb-5">
                 <h2 class="display-5">Nuestro Propósito de Vida 💗</h2>
-                <div class="mx-auto" style="width: 80px; height: 5px; background: var(--p-red-dark); border-radius: 10px;"></div>
+                <p class="lead">Transformando la educación especial en el Sector Cartanal.</p>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-md-5">
                     <div class="value-card">
                         <span class="value-icon">🤝</span>
                         <h3>Misión</h3>
-                        <p>Fomentar la autonomía del estudiante como eje central de su desarrollo integral y social, preparándolos para la vida.</p>
+                        <p class="fs-5">Fomentar la autonomía del estudiante como eje central de su desarrollo integral y social.</p>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="value-card">
                         <span class="value-icon">🌈</span>
                         <h3>Visión</h3>
-                        <p>Ser una institución innovadora que garantice educación de calidad, potenciando las capacidades únicas de cada estudiante.</p>
+                        <p class="fs-5">Ser una institución innovadora que garantice una educación de calidad, maximizando el trabajo de los docentes para potenciar las capacidades de cada estudiante.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding" id="especialidades" style="background-color: var(--p-green);">
+    <section class="section-padding bg-green-pastel" id="especialidades">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6" data-aos="fade-right">
                     <h2 class="display-5 mb-4">Áreas de Atención Especializada 🧩</h2>
-                    <p class="fs-5 mb-4 text-muted">Contamos con personal capacitado para el abordaje integral:</p>
+                    <p class="fs-5 mb-5">Contamos con personal capacitado para el abordaje integral de:</p>
                     <div class="accordion custom-acc" id="accEspecial">
+                        
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#item1">
-                                    <i class="fas fa-lightbulb me-2 text-warning"></i> Discapacidad Intelectual
+                                    💡 Discapacidad Intelectual (Retardo Mental)
                                 </button>
                             </h2>
                             <div id="item1" class="accordion-collapse collapse show" data-bs-parent="#accEspecial">
-                                <div class="accordion-body">Desarrollo de habilidades adaptativas y cognitivas para una integración efectiva.</div>
+                                <div class="accordion-body">
+                                    Nos enfocamos en el desarrollo de habilidades adaptativas, cognitivas y sociales, adaptando el ritmo de enseñanza a las necesidades individuales para lograr una integración efectiva en su entorno.
+                                </div>
                             </div>
                         </div>
+
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#item2">
-                                    <i class="fas fa-palette me-2 text-primary"></i> Síndrome de Down
+                                    🎨 Síndrome de Down
                                 </button>
                             </h2>
                             <div id="item2" class="accordion-collapse collapse" data-bs-parent="#accEspecial">
-                                <div class="accordion-body">Potenciamos lenguaje y psicomotricidad mediante estrategias lúdicas.</div>
+                                <div class="accordion-body">
+                                    Potenciamos el lenguaje, la psicomotricidad y la autonomía personal a través de estrategias lúdicas y pedagógicas que celebran la diversidad y el talento de cada alumno.
+                                </div>
                             </div>
                         </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#item3">
+                                    ♿ Discapacidad Físico Motora
+                                </button>
+                            </h2>
+                            <div id="item3" class="accordion-collapse collapse" data-bs-parent="#accEspecial">
+                                <div class="accordion-body">
+                                    Implementamos adaptaciones curriculares y tecnológicas para garantizar el acceso al aprendizaje, eliminando barreras y fomentando la independencia física de nuestros estudiantes.
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#item4">
-                                    <i class="fas fa-puzzle-piece me-2 text-info"></i> Espectro Autista (TEA)
+                                    🧩 Trastorno del Espectro Autista (TEA)
                                 </button>
                             </h2>
                             <div id="item4" class="accordion-collapse collapse" data-bs-parent="#accEspecial">
-                                <div class="accordion-body">Comunicación alternativa y apoyo conductual positivo.</div>
+                                <div class="accordion-body">
+                                    Abordaje especializado basado en la comunicación alternativa, la estructuración del ambiente y el apoyo conductual positivo para mejorar la interacción social y la autorregulación.
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
-                <div class="col-lg-6 mt-5 mt-lg-0 text-center" data-aos="zoom-in">
-                    <img src="5.jpeg" class="img-fluid rounded-5 shadow-lg border border-4 border-white" alt="Especialidades">
+                <div class="col-lg-6 mt-5 mt-lg-0" data-aos="zoom-in">
+                    <img src="5.jpeg" class="img-fluid rounded-5 shadow-lg" alt="Especialidades">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding bg-light" id="galeria">
+    <section class="section-padding" id="galeria" style="background-color: #f8f9fa;">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <span class="badge bg-primary px-3 py-2 rounded-pill mb-2">Multimedia</span>
-                <h2 class="display-5 fw-bold">Nuestra Galería de Alegría 📸</h2>
+                <h2 class="display-5 fw-bold">Nuestra Galería de Alegría 📸🎥</h2>
+                <p class="lead text-muted">Un vistazo vibrante a las actividades, momentos y rostros en nuestra sede de Cartanal.</p>
             </div>
 
             <div class="row g-4">
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card card-gallery h-100">
-                        <img src="2.jpeg" class="card-img-top" alt="Aniversario" style="height: 200px; object-fit: cover;">
-                        <div class="card-body p-3 text-center">
-                            <p class="small fw-bold mb-0">7mo Aniversario IEE</p>
+                
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="2.jpeg" class="card-img-top" alt="Momento en Cartanal" style="aspect-ratio: 16/9; object-fit: cover;">
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                7mo Aniversario IEE
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card card-gallery h-100">
-                        <div class="video-container bg-dark">
-                            <video muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()" class="w-100" style="height: 200px; object-fit: cover;">
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="3.jpeg" class="card-img-top" alt="Actividad en Cartanal" style="aspect-ratio: 16/9; object-fit: cover;">
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                Charla de inauguracion
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="4.jpeg" class="card-img-top" alt="Sonrisas en Cartanal" style="aspect-ratio: 16/9; object-fit: cover;">
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                Grupo de atencion
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="5.jpeg" class="card-img-top" alt="Evento en Cartanal" style="aspect-ratio: 16/9; object-fit: cover;">
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                Inauguracion del C.E.N
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="6.jpeg" class="card-img-top" alt="Grupo en Cartanal" style="aspect-ratio: 16/9; object-fit: cover;">
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                Logo complejo C.E.N
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="autismo.jpg" class="card-img-top" alt="Día del Autismo" style="aspect-ratio: 16/9; object-fit: cover;">
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                Nuestro compromiso con la inclusión...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="Logo colegio especial.jpeg" class="card-img-top" alt="Logo de la Institución" style="aspect-ratio: 16/9; object-fit: contain;">
+                        <div class="card-body bg-light text-center">
+                            <p class="card-text small text-secondary fw-bold">
+                                Sede Cartanal
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="800">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="video-container" style="position: relative; background: #000;">
+                            <video autoplay muted loop playsinline class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
                                 <source src="VID-20260404-WA0069.mp4" type="video/mp4">
                             </video>
+                            <div class="position-absolute top-0 start-0 m-2">
+                                <span class="badge bg-primary opacity-75">Video</span>
+                            </div>
                         </div>
-                        <div class="card-body p-3 text-center">
-                            <p class="small fw-bold mb-0">Cumbre Educativa</p>
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                Participacion en la cumbre educativa
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card card-gallery h-100">
-                        <div class="video-container bg-dark">
-                            <video muted loop playsinline onmouseover="this.play()" onmouseout="this.pause()" class="w-100" style="height: 200px; object-fit: cover;">
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="900">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="video-container" style="position: relative; background: #000;">
+                            <video autoplay muted loop playsinline class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
+                                <source src="VID-20260404-WA0070.mp4" type="video/mp4">
+                            </video>
+                            <div class="position-absolute top-0 start-0 m-2">
+                                <span class="badge bg-primary opacity-75">Video</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                Recibimiento en su nueva escuela
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="1000">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="video-container" style="position: relative; background: #000;">
+                            <video autoplay muted loop playsinline class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
+                                <source src="VID-20260404-WA0071.mp4" type="video/mp4">
+                            </video>
+                            <div class="position-absolute top-0 start-0 m-2">
+                                <span class="badge bg-primary opacity-75">Video</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                Pijamada
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="1100">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="video-container" style="position: relative; background: #000;">
+                            <video autoplay muted loop playsinline class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
+                                <source src="VID-20260404-WA0073.mp4" type="video/mp4">
+                            </video>
+                            <div class="position-absolute top-0 start-0 m-2">
+                                <span class="badge bg-primary opacity-75">Video</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                Bailoterapia en celebracion de aniversario
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="1200">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="video-container" style="position: relative; background: #000;">
+                            <video autoplay muted loop playsinline class="w-100 d-block" style="aspect-ratio: 16/9; object-fit: cover;">
                                 <source src="VID-20260404-WA0079.mp4" type="video/mp4">
                             </video>
+                            <div class="position-absolute top-0 start-0 m-2">
+                                <span class="badge bg-primary opacity-75">Video</span>
+                            </div>
                         </div>
-                        <div class="card-body p-3 text-center">
-                            <p class="small fw-bold mb-0">Carnaval 2026</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card card-gallery h-100">
-                        <img src="3.jpeg" class="card-img-top" alt="Charla" style="height: 200px; object-fit: cover;">
-                        <div class="card-body p-3 text-center">
-                            <p class="small fw-bold mb-0">Actividades Cartanal</p>
+                        <div class="card-body">
+                            <p class="card-text small text-secondary">
+                                Carnaval 2026
+                            </p>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section class="section-padding" id="contacto" style="background-color: var(--p-blue);">
+    <section class="section-padding bg-blue-pastel" id="contacto">
         <div class="container">
             <div class="contact-box" data-aos="fade-up">
                 <div class="row g-5">
                     <div class="col-lg-6">
                         <h2 class="mb-4">¿Cómo encontrarnos? 📍</h2>
+                        <p class="mb-5">Estamos ubicados en el corazón de Cartanal, brindando luz a toda la comunidad de Santa Teresa del Tuy.</p>
+                        
                         <div class="d-flex align-items-center mb-4">
                             <div class="p-3 bg-primary text-white rounded-circle me-3"><i class="fas fa-envelope"></i></div>
                             <div>
-                                <h6 class="fw-bold mb-0">Correo Institucional</h6>
-                                <p class="mb-0 small text-muted">ieesimonrodriguezextension@gmail.com</p>
+                                <h5 class="fw-bold mb-0">Correo Electrónico</h5>
+                                <p class="mb-0">ieesimonrodriguezextension@gmail.com</p>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="p-3 bg-success text-white rounded-circle me-3"><i class="fas fa-map-marker-alt"></i></div>
+                        
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="p-3 bg-success text-white rounded-circle me-3"><i class="fas fa-map-marked-alt"></i></div>
                             <div>
-                                <h6 class="fw-bold mb-0">Sede Cartanal</h6>
-                                <p class="mb-0 small text-muted">Sector 4, Av. 5, Municipio Independencia, Edo. Miranda.</p>
+                                <h5 class="fw-bold mb-0">Dirección Exacta</h5>
+                                <p class="mb-0">Sector 4, Av. 5, Cartanal, Municipio Independencia, Edo. Miranda.</p>
                             </div>
                         </div>
-                        <div class="alert alert-info border-0 rounded-4 shadow-sm">
-                            <i class="fas fa-clock me-2"></i> <strong>Horario:</strong> 7:00 AM - 12:30 PM
+
+                        <div class="alert alert-info border-0 rounded-4"> 
+                            <strong>Horario de Atención:</strong><br>
+                            Lunes a Viernes: 7:00 AM - 12:30 PM <br>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="map-container">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.47!2d-66.67!3d10.21!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDEyJzM2LjAiTiA2NsKwNDAnMTIuMCJX!5e0!3m2!1ses!2sve!4v1649000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15714.4754593741!2d-66.6970!3d10.2315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a392233c09059%3A0x6b2e3e9d892d4787!2sCartanal%2C%20Edo.%20Miranda!5e0!3m2!1ses!2sve!4v1712270000000!5m2!1ses!2sve" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -422,28 +628,33 @@
 
     <footer class="footer-main">
         <div class="container text-center">
-            <h3 class="mb-3 nunito">IEE SIMÓN RODRÍGUEZ</h3>
-            <p class="opacity-75 mb-4 mx-auto small" style="max-width: 500px;">
-                Dedicados a la formación integral de niños y jóvenes con necesidades educativas especiales. El amor convertido en educación.
+            <h2 class="mb-4 nunito">IEE SIMÓN RODRÍGUEZ</h2>
+            <p class="opacity-75 mb-5 mx-auto" style="max-width: 600px;">
+                Dedicados a la formación integral de niños, niñas y jóvenes con necesidades educativas especiales. Nuestra misión es el amor convertido en educación.
             </p>
             <hr class="opacity-25 mb-4">
-            <p class="small opacity-50 mb-0">© 2026 IEE Simón Rodríguez - Extensión Cartanal. Diseñado para la comunidad de Miranda.</p>
+            <p class="small opacity-50 mb-0">
+                © 2026 Instituto de Educación Especial Simón Rodríguez - Extensión Cartanal.<br>
+                Diseñado con amor e inclusión para la comunidad de Miranda.
+            </p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
-        
-        // Efecto scroll en Navbar
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
         window.onscroll = function() {
             var nav = document.querySelector('.navbar');
-            if (window.pageYOffset > 50) {
-                nav.style.padding = "10px 0";
-                nav.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
+            if (window.pageYOffset > 100) {
+                nav.style.padding = "0.5rem 0";
+                nav.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
             } else {
-                nav.style.padding = "15px 0";
+                nav.style.padding = "1rem 0";
                 nav.style.boxShadow = "none";
             }
         };
